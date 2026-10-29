@@ -1,0 +1,13 @@
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 24px;
+    color: slategrey;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+

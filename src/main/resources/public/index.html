@@ -5,16 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Covid-19 Data Dashboard</title>
         <link rel="stylesheet" href="styles.css">
-        <!-- Chart.js CDN for lightweight rendering -->
-        <script defer src="https://jsdelivr.net"></script>
         <script defer src="app.js"></script>
     </head>
     <body>
         <div class="container">
             <h1>🦠 Covid-19 Transmission Metrics</h1>
-            <div class="chart-wrapper">
-                <canvas id="covidChart"></canvas>
-            </div>
+            <p><b>Total cases accumulated per day since <em>March 2020</em> - <em>June 2020</em></b></p>
+            <div id="customBarChart" class="pure-chart-container"></div>
         </div>
     </body>
 </html>

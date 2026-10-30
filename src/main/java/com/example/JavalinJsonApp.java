@@ -18,6 +18,14 @@ public class JavalinJsonApp {
     private static ArrayNode cleanedData;
     private static final ObjectMapper mapper = new ObjectMapper();
 
+    /**
+     * This is the main business logic.
+     * The method initializes the cleanedData variable
+     * before opening any endpoints to a client to consume
+     * the data. The Javalin web api is created and configured
+     * in a way that adds Cross-Origin Resource Sharing (CORS) security.
+     * Endpoints are then created and client can connect once the web api is running
+     */
     public static void main(String[] args) {
         try {
             cleanedData = loadAndCleanJsonFromResources();
@@ -53,12 +61,12 @@ public class JavalinJsonApp {
      * and parsing the integer string into integers.
      */
     private static ArrayNode loadAndCleanJsonFromResources() throws IOException {
-        try (InputStream is = JavalinJsonApp.class.getClassLoader().getResourceAsStream("covid.json")) {
-            if (is == null) {
+        try (InputStream inputFromFile = JavalinJsonApp.class.getClassLoader().getResourceAsStream("covid.json")) {
+            if (inputFromFile == null) {
                 throw new IOException("Resource file covid.json could not be found in the resources directory.");
             }
 
-            JsonNode rootNode = mapper.readTree(is);
+            JsonNode rootNode = mapper.readTree(inputFromFile);
             ArrayNode targetArray = mapper.createArrayNode();
 
             if (rootNode.isArray()) {

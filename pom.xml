@@ -71,7 +71,7 @@
                             <transformers>
                                 <!-- Defines the entry point containing the main() method -->
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>JavalinJsonApp</mainClass>
+                                    <mainClass>com.example.JavalinJsonApp</mainClass>
                                 </transformer>
                             </transformers>
                             <!-- Excludes signatures that cause security issues in fat JARs -->
